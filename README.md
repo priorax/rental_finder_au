@@ -25,3 +25,8 @@ To do:
   - Allow multiple destinations to be searched for
 
   - Allow an json output so that you can write you own tools rather than be reliant on Google Sheets
+
+Steps to run:
+  - Update settings.json with your Google Maps API key, desired hostname and web server port
+  - Run webhandler_py
+  - Mkae a request as above
