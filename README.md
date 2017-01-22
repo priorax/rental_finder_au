@@ -7,8 +7,15 @@ This is only made to work in Australia, if you are not Australian, sorry.
 The idea is that you use this to make an XML file that can then be read in via Google Sheets using IMPORTXML
 
 Input:
- http://server:port/?addr=(domain or rea url)
- eg: http://localhost:9000/?addr=https://www.domain.com.au/49-cardinal-road-glenroy-vic-3046-11122907
+- http://server:port/?addr=(domain or rea url)
+  - eg: http://localhost:9000/?addr=https://www.domain.com.au/49-cardinal-road-glenroy-vic-3046-11122907
+
+Dependancies:
+ - Selenium
+ - Google Maps API Key
+ - Google Maps Python Client
+ - PhantomJS
+
 
 To do:
   - Make the get-variable name more descriptive
