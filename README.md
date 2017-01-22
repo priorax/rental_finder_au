@@ -29,4 +29,4 @@ To do:
 Steps to run:
   - Update settings.json with your Google Maps API key, desired hostname and web server port
   - Run webhandler_py
-  - Mkae a request as above
+  - Make a request as above
