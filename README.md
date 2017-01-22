@@ -8,7 +8,7 @@ The idea is that you use this to make an XML file that can then be read in via G
 
 Input:
 - http://server:port/?addr=(domain or rea url)
-  - eg: http://localhost:9000/?addr=https://www.domain.com.au/49-cardinal-road-glenroy-vic-3046-11122907
+  - eg: http://localhost:8080/?addr=https://www.domain.com.au/49-cardinal-road-glenroy-vic-3046-11122907
 
 Dependancies:
  - Selenium
@@ -19,11 +19,9 @@ Dependancies:
 
 To do:
   - Make the get-variable name more descriptive
-  - Add a config file to manage web settings
-     - For now, just update web_handler.py
 
   - Add a setup.py to manage dependancy management
 
-  - Add a config file to manage destination for direction searches
   - Allow multiple destinations to be searched for
-  - Allow an json output so that you can write you own tools
+
+  - Allow an json output so that you can write you own tools rather than be reliant on Google Sheets
