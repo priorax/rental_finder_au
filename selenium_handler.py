@@ -63,12 +63,16 @@ class handler():
         driving = SubElement(transport, "Driving")
 
         try:
+            pt_comment = Comment("Minutes taken to get public transport from " + self.rental.fullAddress + " to " + gmaps_config["destination"])
             pt_details = transport_options.public_transport()
+            pt.insert(0,pt_comment )
             time_taken_for_pt = str(round(pt_details["legs"][0]["duration"]["value"] / 60, 2))
             pt.text = time_taken_for_pt
         except:
             pt.text = "Unable to access Google Maps"
         try:
+            driving_comment = Comment("Minutes taken to drive from " + self.rental.fullAddress + " to " + gmaps_config["destination"])
+            driving.insert(0,driving_comment)
             driving_details = transport_options.driving()
             driving_str = str(round(driving_details["legs"][0]["duration"]["value"] / 60, 2))
             driving.text = driving_str
@@ -95,6 +99,8 @@ class handler():
 
         internet = SubElement(child,"Internet")
         adsl = SubElement(internet,"ADSL")
+        adsl_comment = Comment("Estimated line speed")
+        adsl.insert(1,adsl_comment)
         cable = SubElement(internet, "Optus_Cable")
         nbn = SubElement(internet,"NBN")
         internet_details = self.internet()
