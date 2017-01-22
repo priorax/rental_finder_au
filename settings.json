@@ -1,0 +1,10 @@
+{
+  "server": {
+    "port": 8080,
+    "hostname": "localhost"
+  },
+  "transport": {
+    "google_maps_api": "",
+    "destination": "Flinders St Station"
+  }
+}

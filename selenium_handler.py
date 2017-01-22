@@ -50,14 +50,14 @@ class handler():
         internet["cable"] = cable.performRequest()
         return internet
 
-    def xml(self):
+    def xml(self,gmaps_config):
         import transport_gmaps
         from xml.etree.ElementTree import Element, SubElement, Comment, tostring
         top = Element('top')
 
         child = SubElement(top, 'Property')
 
-        transport_options = transport_gmaps.transport(address=self.rental.fullAddress,apikey="")
+        transport_options = transport_gmaps.transport(self.rental.fullAddress,gmaps_config)
         transport = SubElement(top,"Transport")
         pt = SubElement(transport,"Public_Transport")
         driving = SubElement(transport, "Driving")

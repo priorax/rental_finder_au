@@ -2,10 +2,14 @@ import http.server
 import socketserver
 import urllib.parse
 from pprint import pprint
+import json
 
+with open('settings.json') as data_file:
+    settings = json.load(data_file)
 
-HOST_NAME = 'localhost' # !!!REMEMBER TO CHANGE THIS!!!
-PORT_NUMBER = 9000 # Maybe set this to 9000.
+HOST_NAME = settings["server"]["hostname"] # !!!REMEMBER TO CHANGE THIS!!!
+PORT_NUMBER = settings["server"]["port"] # Maybe set this to 9000.
+
 
 class Server(http.server.SimpleHTTPRequestHandler):
 
@@ -30,7 +34,7 @@ class Server(http.server.SimpleHTTPRequestHandler):
             self.send_header('Content-type', 'text/xml')
             self.end_headers()
             handler = handler(Address)
-            self.wfile.write(bytes(handler.xml(), "UTF-8"))
+            self.wfile.write(bytes(handler.xml(settings["transport"]), "UTF-8"))
             #self.wfile.write(bytes(Address, "UTF-8"))
 
     def serve_forever(port):

@@ -3,10 +3,11 @@ import json
 
 class transport():
 
-    def __init__(self, address, apikey, destination = "Flinders St Station" ):
+    def __init__(self, address, gmaps_config):
         self.address = address
-        self.destination = destination
-        self.gmaps = googlemaps.Client(key=apikey)
+
+        self.destination = gmaps_config["destination"]
+        self.gmaps = googlemaps.Client(key=gmaps_config["google_maps_api"])
 
     def google_maps_request(self,method):
         try:
