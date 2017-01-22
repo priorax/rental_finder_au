@@ -7,8 +7,8 @@ class handler():
     def __init__(self,url):
         driver = webdriver.PhantomJS(service_args=['--ignore-ssl-errors=true', '--ssl-protocol=TLSv1'])
         driver.set_window_size(1366, 768)
-        self.generate_data(driver,url)
         # let's not worry about reactive pages.
+        self.generate_data(driver,url)
 
 
     def generate_data(self,driver,url):

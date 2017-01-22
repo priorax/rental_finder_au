@@ -4,7 +4,7 @@ import urllib.parse
 from pprint import pprint
 
 
-HOST_NAME = 'minipete' # !!!REMEMBER TO CHANGE THIS!!!
+HOST_NAME = 'localhost' # !!!REMEMBER TO CHANGE THIS!!!
 PORT_NUMBER = 9000 # Maybe set this to 9000.
 
 class Server(http.server.SimpleHTTPRequestHandler):
